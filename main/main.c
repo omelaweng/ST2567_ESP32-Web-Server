@@ -45,7 +45,7 @@ static const char *TAG = "example";
 char analogtxt[128];
 int adc_raw;
 
-if CONFIG_EXAMPLE_BASIC_AUTH
+#if CONFIG_EXAMPLE_BASIC_AUTH
 
 typedef struct {
     char    *username;

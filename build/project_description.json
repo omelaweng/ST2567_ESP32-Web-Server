@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "ST2567_ESP32-Web-Server",
-    "project_version":    "1",
+    "project_version":    "a9ea92d-dirty",
     "project_path":       "/Users/omelaweng/ST2567_ESP32-Web-Server",
     "idf_path":           "/Users/omelaweng/esp/v5.3/esp-idf",
     "build_dir":          "/Users/omelaweng/ST2567_ESP32-Web-Server/build",
