@@ -23,6 +23,10 @@
 #include "esp_tls.h"
 #include "esp_check.h"
 
+#include "esp_adc/adc_cali.h"
+#include "esp_adc/adc_cali_scheme.h"
+#include "esp_adc/adc_oneshot.h"
+
 #if !CONFIG_IDF_TARGET_LINUX
 #include <esp_wifi.h>
 #include <esp_system.h>
@@ -38,7 +42,10 @@
 
 static const char *TAG = "example";
 
-#if CONFIG_EXAMPLE_BASIC_AUTH
+char analogtxt[128];
+int adc_raw;
+
+if CONFIG_EXAMPLE_BASIC_AUTH
 
 typedef struct {
     char    *username;
@@ -84,6 +91,8 @@ static esp_err_t basic_auth_get_handler(httpd_req_t *req)
     char *buf = NULL;
     size_t buf_len = 0;
     basic_auth_info_t *basic_auth_info = req->user_ctx;
+
+    sprintf(analogtxt, "<H1> Voltag = %d </H1>", adc_raw)
 
     buf_len = httpd_req_get_hdr_value_len(req, "Authorization") + 1;
     if (buf_len > 1) {
@@ -258,7 +267,7 @@ static const httpd_uri_t hello = {
     .handler   = hello_get_handler,
     /* Let's pass response string in user
      * context to demonstrate it's usage */
-    .user_ctx  = "Hello World!"
+    .user_ctx  = analogtxt
 };
 
 /* An HTTP POST handler */

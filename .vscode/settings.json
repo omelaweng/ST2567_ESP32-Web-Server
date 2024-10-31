@@ -12,5 +12,6 @@
     ],
     "idf.port": "/dev/tty.EMBERTONII",
     "idf.pythonBinPath": "/Users/omelaweng/.espressif/python_env/idf5.3_py3.12_env/bin/python",
-    "idf.toolsPath": "/Users/omelaweng/.espressif"
+    "idf.toolsPath": "/Users/omelaweng/.espressif",
+    "C_Cpp.errorSquiggles": "disabled"
 }
